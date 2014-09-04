@@ -1,0 +1,19 @@
+{
+    "name": "depositor",
+    "version": "0.0.1",
+    "description": "Small web service for calculate deposit profits",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git@github.com:unglud/depositor.git"
+    },
+    "author": "Alexander Matrosov <unglud@gmail.com> (http://unglued.ru)",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/unglud/depositor/issues"
+    },
+    "homepage": "https://github.com/unglud/depositor"
+}
