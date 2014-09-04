@@ -2,8 +2,12 @@
     "name": "depositor",
     "version": "0.0.1",
     "description": "Small web service for calculate deposit profits",
+    "engines": {
+        "node": "0.10.x"
+    },
     "main": "index.js",
     "scripts": {
+        "start": "node index.js",
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "repository": {
