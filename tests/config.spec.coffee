@@ -16,3 +16,5 @@ describe "Configuration setup", ->
     expect config.mode
     .toBe 'production'
     next()
+
+  return

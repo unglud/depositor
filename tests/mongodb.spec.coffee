@@ -2,13 +2,15 @@ describe "MongoDB", ->
 
   config = require('../config')(process.env.MODE)
 
-  it "is there a server running", (next)->
+  it 'try to connect to '+ 'mongodb://' + config.mongo.host + ':' + config.mongo.port + '/' + config.mongo.dbname
+
+  xit "is there a server running", (next)->
     MongoClient = require 'mongodb'
     .MongoClient
 
-    console.log('try to connect to '+ 'mongodb://' + config.mongo.host + ':' + config.mongo.port + '/' + config.mongo.dbname);
-
-    MongoClient.connect 'mongodb://' + config.mongo.host + ':' + config.mongo.port + '/' + config.mongo.dbname, (err)->
+    MongoClient.connect 'mongodb://' + config.mongo.host + ':' + config.mongo.port + '/' + config.mongo.dbname, (err, db)->
       expect err
       .toBe null
+      expect db
+      .toBeDefined();
       next()
