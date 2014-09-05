@@ -16,7 +16,7 @@ app.use (err, req, res, next)->
     .send 'Something broke!'
 
 
-mongo.connect 'mongodb://' + config.mongo.host + ':' + config.mongo.port + '/' + config.mongo.db, (err, db)->
+mongo.connect 'mongodb://' + config.mongo.host + ':' + config.mongo.port + '/' + config.mongo.dbname, (err, db)->
   if err
     console.log 'Sorry, there is no mongo db server running.'
   else

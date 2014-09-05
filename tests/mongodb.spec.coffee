@@ -6,7 +6,9 @@ describe "MongoDB", ->
     MongoClient = require 'mongodb'
     .MongoClient
 
-    MongoClient.connect 'mongodb://' + config.mongo.host + ':' + config.mongo.port + '/' + config.mongo.db, (err)->
+    console.log('try to connect to '+ 'mongodb://' + config.mongo.host + ':' + config.mongo.port + '/' + config.mongo.dbname);
+
+    MongoClient.connect 'mongodb://' + config.mongo.host + ':' + config.mongo.port + '/' + config.mongo.dbname, (err)->
       expect err
       .toBe null
       next()

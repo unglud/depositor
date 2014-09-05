@@ -1,6 +1,6 @@
 describe "Configuration setup", ->
   it "should load local configurations", (next)->
-    config = require('../config')()
+    config = require('../config')('local')
     expect config.mode
     .toBe 'local'
     next()
@@ -11,7 +11,7 @@ describe "Configuration setup", ->
     .toBe 'staging'
     next()
 
-  it "should load staging configurations", (next)->
+  it "should load production configurations", (next)->
     config = require('../config')('production')
     expect config.mode
     .toBe 'production'
