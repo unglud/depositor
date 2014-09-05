@@ -1,1 +1,2 @@
-console.log('Hello world');
+require('coffee-script/register');
+require('./server.coffee');

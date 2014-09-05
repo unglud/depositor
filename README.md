@@ -13,5 +13,3 @@ modern and future prove technologies. The goal of this project is to create free
 have their joy in using it every day.
 
 Contribute if you like the depositor!
-
-

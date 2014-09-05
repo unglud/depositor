@@ -19,5 +19,8 @@
     "bugs": {
         "url": "https://github.com/unglud/depositor/issues"
     },
-    "homepage": "https://github.com/unglud/depositor"
+    "homepage": "https://github.com/unglud/depositor",
+    "dependencies": {
+        "coffee-script": "1.*"
+    }
 }
