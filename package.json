@@ -7,9 +7,10 @@
     },
     "main": "index.js",
     "scripts": {
-        "preinstall": "",
+        "install": "./node_modules/.bin/bower install --verbose",
+        "postinstall": "./node_modules/.bin/gulp clean",
         "start": "node index.js",
-        "test": "./node_modules/jasmine-node/bin/jasmine-node ./tests --coffee --verbose"
+        "test": "./node_modules/.bin/jasmine-node ./tests --coffee --verbose"
     },
     "repository": {
         "type": "git",
@@ -29,6 +30,7 @@
         "mongoose": "3.8.*",
         "jasmine-node": "1.*",
         "gulp": "3.*",
+        "bower": "1.*",
         "preen": "1.*",
         "ect": "0.*"
     }
