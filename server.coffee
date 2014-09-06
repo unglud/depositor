@@ -48,26 +48,21 @@ if process.env.MODE is 'production'
 mongoose = require 'mongoose'
 mongoose.connect('mongodb://' + config.mongo.host + ':' + config.mongo.port + '/' + config.mongo.dbname);
 
-# templater
+# templator
 ect = require 'ect'
 ectRenderer = ect ({ watch: true, root: __dirname + '/views', ext: '.ect' });
-
-
-# init
-
 app.set 'view engine', 'ect'
 app.engine 'ect', ectRenderer.render
 
 
-app.get '/', (req, res) ->
-  res.send 'Hello world'
 
-
+# error handle
 app.use (err, req, res, next)->
   console.error err.stack
   res
   .status 500
     .send 'Something broke!'
+
 
 # dynamically include routes (Controller)
 fs.readdirSync('./controllers').forEach (file) ->
@@ -75,6 +70,6 @@ fs.readdirSync('./controllers').forEach (file) ->
     route = require('./controllers/' + file);
     route.controller(app);
 
-
+# start server
 server = app.listen process.env.PORT || 5000, ->
   console.log 'Listening on port %d', server.address().port
