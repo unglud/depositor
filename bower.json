@@ -1,0 +1,14 @@
+{
+    "name": "depositor",
+    "dependencies": {
+        "bootstrap": "3.*"
+    },
+    "preen": {
+        "bootstrap": [
+            "dist/**"
+        ],
+        "jquery": [
+            "dist/**"
+        ]
+    }
+}
