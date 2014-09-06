@@ -1,16 +1,14 @@
+config = require('../config')(process.env.MODE)
+mongoose = require('mongoose')
+
+
 describe "MongoDB", ->
 
-  config = require('../config')(process.env.MODE)
-
-  it 'try to connect to '+ 'mongodb://' + config.mongo.host + ':' + config.mongo.port + '/' + config.mongo.dbname
+  xit 'try to connect to '+ 'mongodb://' + config.mongo.host + ':' + config.mongo.port + '/' + config.mongo.dbname
 
   xit "is there a server running", (next)->
-    MongoClient = require 'mongodb'
-    .MongoClient
 
-    MongoClient.connect 'mongodb://' + config.mongo.host + ':' + config.mongo.port + '/' + config.mongo.dbname, (err, db)->
+    mongoose.connect 'mongodb://' + config.mongo.host + ':' + config.mongo.port + '/' + config.mongo.dbname, {}, (err) ->
       expect err
-      .toBe null
-      expect db
-      .toBeDefined();
+      .toBe undefined
       next()

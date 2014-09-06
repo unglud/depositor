@@ -23,7 +23,10 @@
     "dependencies": {
         "coffee-script": "1.*",
         "express": "4.*",
-        "mongodb": "1.*",
-        "jasmine-node": "1.*"
+        "morgan": "1.*",
+        "loggly": "1.*",
+        "mongoose": "3.8.*",
+        "jasmine-node": "1.*",
+        "ect":"0.*"
     }
 }

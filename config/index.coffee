@@ -10,16 +10,20 @@ config =
     mode: 'staging'
     port: '4000'
     mongo:
-      host: 'depositor:KuUnQWs*pX62@ds033390.mongolab.com'
-      port: '33390'
-      dbname: 'heroku_app29232518'
+      host: process.env.MONGO_HOST
+      port: process.env.MONGO_PORT
+      dbname: process.env.MONGO_DB
   production:
     mode: 'production'
     port: '5000'
     mongo:
-      host: 'depositor:KuUnQWs*pX62@ds063859.mongolab.com'
-      port: '63859'
-      dbname: 'depositor'
+      host: process.env.MONGO_HOST
+      port: process.env.MONGO_PORT
+      dbname: process.env.MONGO_DB
+    loggly:
+      token: process.env.LOGGLY_TOKEN
 
 module.exports = (mode) ->
   config[mode || process.env.MODE || 'local'] || config.local
+
+
