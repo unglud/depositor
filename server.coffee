@@ -54,7 +54,9 @@ ectRenderer = ect ({ watch: true, root: __dirname + '/views', ext: '.ect' });
 app.set 'view engine', 'ect'
 app.engine 'ect', ectRenderer.render
 
-
+# static files
+path = require 'path'
+app.use(express.static(path.join(__dirname, 'public')));
 
 # error handle
 app.use (err, req, res, next)->

@@ -1,5 +1,5 @@
-###var mongoose = require('mongoose')
-var Video = require('../models/user');###
+Set = require('../models/set')
+
 module.exports.controller = (app) ->
 
   app.get '/', (req, res) ->
