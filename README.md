@@ -1,5 +1,5 @@
 [ ![Codeship Status for unglud/depositor](https://www.codeship.io/projects/12c051a0-16f7-0132-5f85-2e35c05e22b1/status)](https://www.codeship.io/projects/33969)
-[![i18n](http://img.shields.io/badge/i18n-en%2Fru-3498db.svg?style=flat-square)]
+![i18n](http://img.shields.io/badge/i18n-en%2Fru-3498db.svg?style=flat-square)
 
 # depositor
 
