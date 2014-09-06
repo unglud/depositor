@@ -5,7 +5,8 @@
     },
     "preen": {
         "bootstrap": [
-            "dist/**"
+            "dist/**",
+            "less/**"
         ],
         "jquery": [
             "dist/**"
