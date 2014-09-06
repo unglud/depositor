@@ -6,6 +6,8 @@ express = require 'express'
 app = express()
 
 ## express middleware
+
+### logger ###
 morgan = require 'morgan'
 morgan.token 'statusc', (req, res) ->
   color = 32 #green
@@ -42,6 +44,14 @@ if process.env.MODE is 'production'
   }
 
   app.use(morgan 'combined', {stream: accessLogStream});
+
+### localisation ###
+i18n = require 'i18n'
+i18n.configure({
+  locales:['en', 'ru']
+  directory: __dirname + '/locales'
+});
+app.use(i18n.init);
 
 
 # db connect

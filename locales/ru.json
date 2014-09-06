@@ -1,0 +1,14 @@
+{
+	"Help": "Помощь",
+	"Your deposits": "Your deposits",
+	"Bank name": "Bank name",
+	"Deposit name": "Deposit name",
+	"Min sum": "Min sum",
+	"Min term (days)": "Min term (days)",
+	"Rate": "Rate",
+	"Start sum": "Start sum",
+	"Month": "Month",
+	"Refill": "Refill",
+	"Calculation": "Calculation",
+	"Ячейки помечанные цветом означают выплату процентов в этом месяце. <span class=\"label label-info\">Синим цветом</span> обозначены выплаты без капитализаци на отдельный счет. <span class=\"label label-success\">Зеленым цветом</span> капитализация на счет.": "Ячейки помечанные цветом означают выплату процентов в этом месяце. <span class=\"label label-info\">Синим цветом</span> обозначены выплаты без капитализаци на отдельный счет. <span class=\"label label-success\">Зеленым цветом</span> капитализация на счет."
+}
