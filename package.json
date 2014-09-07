@@ -9,6 +9,7 @@
     "scripts": {
         "install": "./node_modules/.bin/bower install --verbose",
         "postinstall": "./node_modules/.bin/gulp",
+        "prestart": "node ./seed",
         "start": "node index.js",
         "test": "./node_modules/.bin/jasmine-node ./tests --coffee --verbose"
     },
