@@ -1,4 +1,4 @@
-Set = require('../models/set')
+Set = require('../models/bank')
 
 module.exports.controller = (app) ->
 
