@@ -55,6 +55,97 @@
                 </div>
 
                 <div class="bs-component table-responsive">
+
+                    <table class="table table-bordered table-striped">
+                        <thead class="text-center">
+                            <tr>
+                                <th class="text-right" colspan="2"><%= @__ 'Bank name' %></th>
+                                <% for bank in @banks : %>
+                                <td colspan="<%- @getVarCount bank %>"><%= bank.name %></td>
+                                <% end %>
+                            </tr>
+                            <tr>
+                                <th class="text-right" colspan="2"><%= @__ 'Deposit name' %></th>
+                                <% for bank in @banks : %>
+                                    <% for deposit in bank.deposits : %>
+                                    <td colspan="<%- deposit.variants.length %>"><%= deposit.name %></td>
+                                    <% end %>
+                                <% end %>
+                            </tr>
+                            <tr>
+                                <th class="text-right" colspan="2"><%= @__ 'Min sum' %></th>
+
+                                <% for bank in @banks : %>
+                                    <% for deposit in bank.deposits : %>
+                                    <td colspan="<%- deposit.variants.length %>"><%= deposit.min_sum %></td>
+                                    <% end %>
+                                <% end %>
+
+                            </tr>
+                            <tr>
+                                <th class="text-right" colspan="2"><%= @__ 'Min term (days)' %></th>
+
+                                <% for bank in @banks : %>
+                                    <% for deposit in bank.deposits : %>
+                                        <% for vrt in deposit.variants : %>
+                                        <td><%= vrt.min_term %></td>
+                                        <% end %>
+                                    <% end %>
+                                <% end %>
+                            </tr>
+                            <tr>
+                                <th class="text-right" colspan="2"><%= @__ 'Rate' %></th>
+                                <% for bank in @banks : %>
+                                    <% for deposit in bank.deposits : %>
+                                        <% for vrt in deposit.variants : %>
+                                        <td><%= vrt.rate %>%</td>
+                                        <% end %>
+                                    <% end %>
+                                <% end %>
+                            </tr>
+                            <tr>
+                                <th class="text-right" colspan="2"><%= @__ 'Start sum' %></th>
+
+                                <% for bank in @banks : %>
+                                    <% for deposit in bank.deposits : %>
+                                    <td colspan="<%- deposit.variants.length %>">35000</td>
+                                    <% end %>
+                                <% end %>
+                            </tr>
+                            <tr>
+                                <td colspan="<%- (@getOveralCount @banks) + 2 %>"></td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th class="text-right"><%= @__ 'Month' %></th>
+                                <th class="text-center"><%= @__ 'Refill' %></th>
+
+                                <% for bank in @banks : %>
+                                    <% for deposit in bank.deposits : %>
+                                        <th class="text-center" colspan="<%- deposit.variants.length %>"><%= @__ 'Calculation' %></th>
+                                    <% end %>
+                                <% end %>
+
+                            </tr>
+                            <% for i in [1..12] : %>
+                                <tr class="text-center">
+                                    <th class="text-right"><%- i %></th>
+                                    <td>0</td>
+                                    <% for bank in @banks : %>
+                                        <% for deposit in bank.deposits : %>
+                                            <% for vrt in deposit.variants : %>
+                                            <td>35000</td>
+                                            <% end %>
+                                        <% end %>
+                                    <% end %>
+                                </tr>
+
+                            <% end %>
+                        </tbody>
+                    </table>
+
+
                     <table class="table table-bordered table-striped">
                         <thead class="text-center">
                             <tr>
@@ -182,6 +273,7 @@
 
                         </tbody>
                     </table>
+
                     <div class="well">
                         <%- @__ 'Ячейки помечанные цветом означают выплату процентов в этом месяце. <span class="label label-info">Синим цветом</span> обозначены выплаты без капитализаци на отдельный счет. <span class="label label-success">Зеленым цветом</span> капитализация на счет.' %>
                     </div>

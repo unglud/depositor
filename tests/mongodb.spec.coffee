@@ -4,11 +4,11 @@ mongoose = require('mongoose')
 
 describe "MongoDB", ->
 
-  it 'try to connect to '+ 'mongodb://' + config.mongo.host + ':' + config.mongo.port + '/' + config.mongo.dbname
+  it 'try to connect to '+ config.mongo
 
   it "is there a server running", (next)->
 
-    mongoose.connect 'mongodb://' + config.mongo.host + ':' + config.mongo.port + '/' + config.mongo.dbname, {}, (err) ->
+    mongoose.connect config.mongo, {}, (err) ->
       expect err
       .toBe undefined
       mongoose.connection.close()

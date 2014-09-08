@@ -3,31 +3,58 @@
         "name": "Банк 1",
         "deposits": [
             {
-                "_id": "000000000000000000000001",
                 "name": "депозит 1",
-                "rate": 1,
-                "min_term": 10,
                 "min_sum": 10000,
                 "capitalization": true,
-                "payments": 1
+                "payments": 1,
+                "variants":[
+                    {
+                        "_id": "000000000000000000000011",
+                        "rate": 11,
+                        "min_term": 110
+                    }
+                ]
             },
             {
-                "_id": "000000000000000000000002",
                 "name": "депозит 2",
-                "rate": 2,
-                "min_term": 20,
                 "min_sum": 20000,
                 "capitalization": true,
-                "payments": 1
+                "payments": 2,
+                "variants":[
+                    {
+                        "_id": "000000000000000000000021",
+                        "rate": 21,
+                        "min_term": 210
+                    },
+                    {
+                        "_id": "000000000000000000000022",
+                        "rate": 22,
+                        "min_term": 220
+                    }
+                ]
             },
             {
-                "_id": "000000000000000000000003",
                 "name": "депозит 3",
-                "rate": 3,
-                "min_term": 30,
                 "min_sum": 30000,
                 "capitalization": true,
-                "payments": 3
+                "payments": 3,
+                "variants":[
+                    {
+                        "_id": "000000000000000000000031",
+                        "rate": 31,
+                        "min_term": 310
+                    },
+                    {
+                        "_id": "000000000000000000000032",
+                        "rate": 32,
+                        "min_term": 320
+                    },
+                    {
+                        "_id": "000000000000000000000033",
+                        "rate": 33,
+                        "min_term": 330
+                    }
+                ]
             }
         ]
     },
@@ -35,31 +62,58 @@
         "name": "Банк 2",
         "deposits": [
             {
-                "_id": "000000000000000000000004",
-                "name": "депозит 4",
-                "rate": 4,
-                "min_term": 40,
-                "min_sum": 40000,
+                "name": "депозит 21",
+                "min_sum": 10000,
                 "capitalization": true,
-                "payments": 1
+                "payments": 1,
+                "variants":[
+                    {
+                        "_id": "000000000000000000000111",
+                        "rate": 11,
+                        "min_term": 111
+                    }
+                ]
             },
             {
-                "_id": "000000000000000000000005",
-                "name": "депозит 5",
-                "rate": 5,
-                "min_term": 50,
-                "min_sum": 50000,
+                "name": "депозит 22",
+                "min_sum": 20000,
                 "capitalization": true,
-                "payments": 1
+                "payments": 2,
+                "variants":[
+                    {
+                        "_id": "000000000000000000000121",
+                        "rate": 21,
+                        "min_term": 121
+                    },
+                    {
+                        "_id": "000000000000000000000122",
+                        "rate": 22,
+                        "min_term": 122
+                    }
+                ]
             },
             {
-                "_id": "000000000000000000000006",
-                "name": "депозит 6",
-                "rate": 6,
-                "min_term": 60,
-                "min_sum": 60000,
+                "name": "депозит 23",
+                "min_sum": 30000,
                 "capitalization": true,
-                "payments": 3
+                "payments": 3,
+                "variants":[
+                    {
+                        "_id": "000000000000000000000131",
+                        "rate": 31,
+                        "min_term": 131
+                    },
+                    {
+                        "_id": "000000000000000000000132",
+                        "rate": 32,
+                        "min_term": 132
+                    },
+                    {
+                        "_id": "000000000000000000000133",
+                        "rate": 33,
+                        "min_term": 133
+                    }
+                ]
             }
         ]
     }

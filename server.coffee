@@ -56,7 +56,7 @@ app.use(i18n.init);
 
 # db connect
 mongoose = require 'mongoose'
-mongoose.connect('mongodb://' + config.mongo.host + ':' + config.mongo.port + '/' + config.mongo.dbname);
+mongoose.connect(config.mongo);
 
 # templator
 ect = require 'ect'
@@ -68,19 +68,28 @@ app.engine 'ect', ectRenderer.render
 path = require 'path'
 app.use(express.static(path.join(__dirname, 'public')));
 
+# dynamically include routes
+require('./lib/boot')(app, { verbose: process.env.MODE=='local' })
+
 # error handle
-app.use (err, req, res, next)->
+###app.use (err, req, res, next)->
   console.error err.stack
   res
   .status 500
-    .send 'Something broke!'
+    .send 'Something broke!'###
 
 
-# dynamically include routes (Controller)
-fs.readdirSync('./controllers').forEach (file) ->
-  if(file.substr(-7) == '.coffee')
-    route = require('./controllers/' + file);
-    route.controller(app);
+app.use((err, req, res, next) ->
+  console.error(err.stack)
+  res.status(500).render('5xx');
+  return
+)
+
+## assume 404 since no middleware responded
+app.use((req, res, next) ->
+  res.status(404).render('404', { url: req.originalUrl });
+  return
+)
 
 # start server
 server = app.listen process.env.PORT || 5000, ->
