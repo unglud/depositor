@@ -91,6 +91,9 @@ app.use((req, res, next) ->
   return
 )
 
+#seed
+require './seed'
+
 # start server
 server = app.listen process.env.PORT || 5000, ->
   console.log 'Listening on port %d', server.address().port
